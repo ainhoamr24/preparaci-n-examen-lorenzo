@@ -1,4 +1,0 @@
-interface:
-  display_name: "Creación de componentes"
-  short_description: "Apuntes y práctica de DIW"
-  default_prompt: "Use $diw-03-creacion-componentes para explicarme este tema y prepararme para el examen."

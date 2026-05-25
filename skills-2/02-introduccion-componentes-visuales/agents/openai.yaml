@@ -1,4 +1,0 @@
-interface:
-  display_name: "Introducción a los componentes visuales"
-  short_description: "Apuntes y práctica de DIW"
-  default_prompt: "Use $diw-02-introduccion-componentes-visuales para explicarme este tema y prepararme para el examen."

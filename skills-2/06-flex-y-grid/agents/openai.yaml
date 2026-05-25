@@ -1,4 +1,0 @@
-interface:
-  display_name: "Flex y Grid"
-  short_description: "Apuntes y práctica de DIW"
-  default_prompt: "Use $diw-06-flex-y-grid para explicarme este tema y prepararme para el examen."
