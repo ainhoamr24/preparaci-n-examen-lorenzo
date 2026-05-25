@@ -1,0 +1,4 @@
+interface:
+  display_name: "El diseño web"
+  short_description: "Apuntes y práctica de DIW"
+  default_prompt: "Use $diw-01-el-diseno-web para explicarme este tema y prepararme para el examen."

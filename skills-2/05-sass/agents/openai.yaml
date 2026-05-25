@@ -1,0 +1,4 @@
+interface:
+  display_name: "SASS"
+  short_description: "Apuntes y práctica de DIW"
+  default_prompt: "Use $diw-05-sass para explicarme este tema y prepararme para el examen."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "CSS"
+  short_description: "Apuntes y práctica de DIW"
+  default_prompt: "Use $diw-04-css para explicarme este tema y prepararme para el examen."

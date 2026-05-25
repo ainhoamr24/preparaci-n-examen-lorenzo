@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arquitectura"
+  short_description: "Apuntes y práctica de DIW"
+  default_prompt: "Use $diw-07-arquitectura para explicarme este tema y prepararme para el examen."
