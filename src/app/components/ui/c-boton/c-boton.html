@@ -1,18 +1,7 @@
 <button
   type="button"
   class="c-boton"
-  [class.c-boton--importancia-primaria]="importancia === 'primaria'"
-  [class.c-boton--importancia-secundaria]="importancia === 'secundaria'"
-  [class.c-boton--importancia-terciaria]="importancia === 'terciaria'"
-  [class.c-boton--funcion-normal]="funcion === 'normal'"
-  [class.c-boton--funcion-alternativa]="funcion === 'alternativa'"
-  [class.c-boton--funcion-peligrosa]="funcion === 'peligrosa'"
-  [class.c-boton--tamano-pequeno]="tamano === 'pequeno'"
-  [class.c-boton--tamano-compacto]="tamano === 'compacto'"
-  [class.c-boton--tamano-mediano]="tamano === 'mediano'"
-  [class.c-boton--forma-pildora]="forma === 'pildora'"
-  [class.c-boton--forma-rectangular]="forma === 'rectangular'"
-  [class.c-boton--seleccionado]="seleccionado"
+  [ngClass]="clases"
   [disabled]="deshabilitado"
 >
   <ng-content></ng-content>
