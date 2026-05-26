@@ -1,0 +1,19 @@
+<div
+  class="c-menu"
+  role="tablist"
+  [class.c-menu--tamano-pequeno]="tamano === 'pequeno'"
+  [class.c-menu--tamano-compacto]="tamano === 'compacto'"
+  [class.c-menu--tamano-mediano]="tamano === 'mediano'"
+>
+  @for (opcion of opciones; track opcion.valor) {
+    <button
+      type="button"
+      role="tab"
+      class="c-menu__opcion"
+      [class.c-menu__opcion--seleccionada]="opcion.valor === seleccionada"
+      [attr.aria-selected]="opcion.valor === seleccionada"
+    >
+      {{ opcion.etiqueta }}
+    </button>
+  }
+</div>

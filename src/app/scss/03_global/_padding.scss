@@ -1,0 +1,40 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$padding-sizes) {
+    --mlt-sys-padding-#{$i - 1}: #{list.nth(utilities.$padding-sizes, $i)};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$padding-sizes) {
+  .g--padding-#{$i - 1} {
+    padding: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-top-#{$i - 1} {
+    padding-top: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-right-#{$i - 1} {
+    padding-right: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-bottom-#{$i - 1} {
+    padding-bottom: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-left-#{$i - 1} {
+    padding-left: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-horizontal-#{$i - 1} {
+    padding-left: var(--mlt-sys-padding-#{$i - 1});
+    padding-right: var(--mlt-sys-padding-#{$i - 1});
+  }
+
+  .g--padding-vertical-#{$i - 1} {
+    padding-top: var(--mlt-sys-padding-#{$i - 1});
+    padding-bottom: var(--mlt-sys-padding-#{$i - 1});
+  }
+}

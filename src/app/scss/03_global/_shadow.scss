@@ -1,0 +1,20 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$shadows) {
+    --mlt-sys-shadow-#{$i}: #{list.nth(utilities.$shadows, $i)};
+  }
+
+  --mlt-sys-shadow-card: var(--mlt-sys-shadow-4);
+}
+
+@for $i from 1 through list.length(utilities.$shadows) {
+  .g--shadow-#{$i} {
+    box-shadow: var(--mlt-sys-shadow-#{$i});
+  }
+}
+
+.g--shadow-card {
+  box-shadow: var(--mlt-sys-shadow-card) ;
+}

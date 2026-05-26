@@ -1,0 +1,62 @@
+<div class="l-pagina">
+  <header class="l-pagina__cabecera">
+    <div class="dashboard__filtros">
+      <c-label tamano="compacto">MODELS</c-label>
+
+      @for (modelo of modelos; track modelo.valor) {
+        <c-boton
+          importancia="secundaria"
+          funcion="alternativa"
+          tamano="compacto"
+          [seleccionado]="modelosSeleccionados().includes(modelo.valor)"
+          (click)="modelosSeleccionados.set(modelosSeleccionados().includes(modelo.valor) ? modelosSeleccionados().filter((v) => v !== modelo.valor) : [...modelosSeleccionados(), modelo.valor])"
+        >
+          {{ modelo.etiqueta }}
+        </c-boton>
+      }
+
+      <div class="dashboard__acciones">
+        <c-boton
+          importancia="secundaria"
+          forma="rectangular"
+          tamano="compacto"
+          (click)="modelosSeleccionados.set(modelos.map((m) => m.valor))"
+        >
+          All
+        </c-boton>
+        <c-boton
+          importancia="secundaria"
+          forma="rectangular"
+          tamano="compacto"
+          (click)="modelosSeleccionados.set([])"
+        >
+          None
+        </c-boton>
+      </div>
+
+      <span class="c-separador c-separador--vertical" aria-hidden="true"></span>
+
+      <c-label tamano="compacto">RANGE</c-label>
+
+      <c-menu
+        tamano="compacto"
+        [opciones]="opcionesRango"
+        [seleccionada]="rangoSeleccionado()"
+        (seleccionar)="rangoSeleccionado.set($event)"
+      />
+    </div>
+  </header>
+
+  <main class="l-pagina__cuerpo">
+    <div class="dashboard__metricas">
+      @for (tarjeta of tarjetas; track tarjeta.titulo) {
+        <c-tarjeta
+          [titulo]="tarjeta.titulo"
+          [valor]="tarjeta.valor"
+          [subtitulo]="tarjeta.subtitulo"
+          [variante]="tarjeta.variante"
+        />
+      }
+    </div>
+  </main>
+</div>

@@ -1,0 +1,52 @@
+:host {
+  display: inline-flex;
+}
+
+.c-menu {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  background-color: var(--mlt-sys-color-page-background);
+  border: 1px solid var(--mlt-sys-color-border-subtle);
+  border-radius: var(--mlt-sys-radius-sm);
+  overflow: hidden;
+
+  &__opcion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    color: var(--mlt-sys-color-text-muted);
+    font-family: var(--mlt-sys-font-family-base);
+    font-weight: var(--mlt-sys-font-weight-5);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:not(:first-child) {
+      border-left: 1px solid var(--mlt-sys-color-border-subtle);
+    }
+
+    &--seleccionada {
+      background-color: var(--mlt-sys-color-provider-surface);
+      color: var(--mlt-sys-color-accent-orange);
+    }
+  }
+
+  &--tamano-pequeno &__opcion {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-space-sm);
+    font-size: var(--mlt-sys-font-size-2);
+  }
+
+  &--tamano-compacto &__opcion {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-space-md);
+    font-size: var(--mlt-sys-font-size-3);
+  }
+
+  &--tamano-mediano &__opcion {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-padding-7);
+    font-size: var(--mlt-sys-font-size-4);
+  }
+}

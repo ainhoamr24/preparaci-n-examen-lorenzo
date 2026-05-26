@@ -1,0 +1,55 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+$semantic-color-tokens: (
+  'page-background': #ffffff,
+  'surface-card': #f7f8fa,
+  'border-subtle': #e2e5ea,
+  'text-strong': #1a1d27,
+  'text-muted': #5a6472,
+  'accent-orange': #d97757,
+  'success': #16a34a,
+  'provider-surface': #f3e7e6,
+);
+
+:root {
+  @each $name, $values in utilities.$color-scales {
+    @for $i from 1 through list.length($values) {
+      --mlt-sys-color-#{$name}-#{$i}: #{list.nth($values, $i)};
+    }
+  }
+
+  @each $name, $value in $semantic-color-tokens {
+    --mlt-sys-color-#{$name}: #{$value};
+  }
+}
+
+@each $name, $values in utilities.$color-scales {
+  @for $i from 1 through list.length($values) {
+    .g--color-#{$name}-#{$i} {
+      color: var(--mlt-sys-color-#{$name}-#{$i});
+    }
+
+    .g--background-color-#{$name}-#{$i} {
+      background-color: var(--mlt-sys-color-#{$name}-#{$i});
+    }
+
+    .g--border-color-#{$name}-#{$i} {
+      border-color: var(--mlt-sys-color-#{$name}-#{$i});
+    }
+  }
+}
+
+@each $name, $value in $semantic-color-tokens {
+  .g--color-#{$name} {
+    color: var(--mlt-sys-color-#{$name});
+  }
+
+  .g--background-color-#{$name} {
+    background-color: var(--mlt-sys-color-#{$name});
+  }
+
+  .g--border-color-#{$name} {
+    border-color: var(--mlt-sys-color-#{$name});
+  }
+}

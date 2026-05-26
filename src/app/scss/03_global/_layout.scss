@@ -1,0 +1,68 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+$semantic-space-tokens: (
+  '2xs': 4px,
+  'xs': 8px,
+  'sm': 12px,
+  'md': 16px,
+  'lg': 24px,
+  'xl': 32px,
+  '2xl': 48px,
+);
+
+:root {
+  @for $i from 1 through list.length(utilities.$gap-sizes) {
+    --mlt-sys-gap-#{$i - 1}: #{list.nth(utilities.$gap-sizes, $i)};
+  }
+
+  @each $name, $value in $semantic-space-tokens {
+    --mlt-sys-space-#{$name}: #{$value};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$gap-sizes) {
+  .g--gap-#{$i - 1} {
+    gap: var(--mlt-sys-gap-#{$i - 1});
+  }
+
+  .g--row-gap-#{$i - 1} {
+    row-gap: var(--mlt-sys-gap-#{$i - 1});
+  }
+
+  .g--column-gap-#{$i - 1} {
+    column-gap: var(--mlt-sys-gap-#{$i - 1});
+  }
+}
+
+.g--display-block {
+  display: block !important;
+}
+
+.g--display-flex {
+  display: flex !important;
+}
+
+.g--display-grid {
+  display: grid !important;
+}
+
+.g--flex-column {
+  flex-direction: column !important;
+}
+
+.g--flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.g--justify-between {
+  justify-content: space-between !important;
+}
+
+.g--justify-center {
+  justify-content: center !important;
+}
+
+.g--align-center {
+  align-items: center !important;
+}

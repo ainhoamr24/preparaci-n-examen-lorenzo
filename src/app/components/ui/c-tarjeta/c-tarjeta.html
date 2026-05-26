@@ -1,0 +1,15 @@
+<article
+  class="c-tarjeta"
+  [class.c-tarjeta--variante-normal]="variante === 'normal'"
+  [class.c-tarjeta--variante-destacado]="variante === 'destacado'"
+>
+  @if (titulo) {
+    <span class="c-tarjeta__titulo">{{ titulo }}</span>
+  }
+
+  <strong class="c-tarjeta__valor">{{ valor }}</strong>
+
+  @if (subtitulo) {
+    <span class="c-tarjeta__subtitulo">{{ subtitulo }}</span>
+  }
+</article>

@@ -1,0 +1,31 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+$semantic-radius-tokens: (
+  'sm': 8px,
+  'md': 12px,
+  'lg': 16px,
+  'pill': 999px,
+);
+
+:root {
+  @for $i from 1 through list.length(utilities.$border-radius-sizes) {
+    --mlt-sys-border-radius-#{$i - 1}: #{list.nth(utilities.$border-radius-sizes, $i)};
+  }
+
+  @each $name, $value in $semantic-radius-tokens {
+    --mlt-sys-radius-#{$name}: #{$value};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$border-radius-sizes) {
+  .g--border-radius-#{$i - 1} {
+    border-radius: var(--mlt-sys-border-radius-#{$i - 1});
+  }
+}
+
+@each $name, $value in $semantic-radius-tokens {
+  .g--border-radius-#{$name} {
+    border-radius: var(--mlt-sys-radius-#{$name});
+  }
+}

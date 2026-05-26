@@ -1,0 +1,30 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$font-sizes) {
+    --mlt-sys-font-size-#{$i}: #{list.nth(utilities.$font-sizes, $i)};
+  }
+
+  @for $i from 1 through list.length(utilities.$font-weights) {
+    --mlt-sys-font-weight-#{$i}: #{list.nth(utilities.$font-weights, $i)};
+  }
+
+  --mlt-sys-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@for $i from 1 through list.length(utilities.$font-sizes) {
+  .g--font-size-#{$i} {
+    font-size: var(--mlt-sys-font-size-#{$i});
+  }
+}
+
+@for $i from 1 through list.length(utilities.$font-weights) {
+  .g--font-weight-#{$i} {
+    font-weight: var(--mlt-sys-font-weight-#{$i});
+  }
+}
+
+.g--font-family-base {
+  font-family: var(--mlt-sys-font-family-base) !important;
+}

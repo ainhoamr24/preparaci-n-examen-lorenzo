@@ -1,0 +1,40 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$margin-sizes) {
+    --mlt-sys-margin-#{$i - 1}: #{list.nth(utilities.$margin-sizes, $i)};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$margin-sizes) {
+  .g--margin-#{$i - 1} {
+    margin: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-top-#{$i - 1} {
+    margin-top: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-right-#{$i - 1} {
+    margin-right: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-bottom-#{$i - 1} {
+    margin-bottom: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-left-#{$i - 1} {
+    margin-left: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-horizontal-#{$i - 1} {
+    margin-left: var(--mlt-sys-margin-#{$i - 1});
+    margin-right: var(--mlt-sys-margin-#{$i - 1});
+  }
+
+  .g--margin-vertical-#{$i - 1} {
+    margin-top: var(--mlt-sys-margin-#{$i - 1});
+    margin-bottom: var(--mlt-sys-margin-#{$i - 1});
+  }
+}

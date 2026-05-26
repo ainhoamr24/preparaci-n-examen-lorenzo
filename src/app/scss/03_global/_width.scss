@@ -1,0 +1,22 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$width-sizes) {
+    --mlt-sys-width-#{$i - 1}: #{list.nth(utilities.$width-sizes, $i)};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$width-sizes) {
+  .g--width-#{$i - 1} {
+    width: var(--mlt-sys-width-#{$i - 1});
+  }
+
+  .g--min-width-#{$i - 1} {
+    min-width: var(--mlt-sys-width-#{$i - 1});
+  }
+
+  .g--max-width-#{$i - 1} {
+    max-width: var(--mlt-sys-width-#{$i - 1});
+  }
+}

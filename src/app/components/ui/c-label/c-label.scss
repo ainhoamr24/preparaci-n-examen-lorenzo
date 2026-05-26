@@ -1,0 +1,29 @@
+:host {
+  display: inline-flex;
+}
+
+.c-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--mlt-sys-color-text-muted);
+  font-family: var(--mlt-sys-font-family-base);
+  font-weight: var(--mlt-sys-font-weight-8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  &--tamano-pequeno {
+    font-size: var(--mlt-sys-font-size-2);
+  }
+
+  &--tamano-compacto {
+    font-size: var(--mlt-sys-font-size-3);
+  }
+
+  &--tamano-mediano {
+    font-size: var(--mlt-sys-font-size-4);
+  }
+
+  &--tamano-grande {
+    font-size: var(--mlt-sys-font-size-6);
+  }
+}

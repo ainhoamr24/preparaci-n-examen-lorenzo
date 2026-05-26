@@ -1,0 +1,117 @@
+:host {
+  display: inline-flex;
+}
+
+.c-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mlt-sys-space-xs);
+  border: 1px solid transparent;
+  font-family: var(--mlt-sys-font-family-base);
+  font-weight: var(--mlt-sys-font-weight-5);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &--forma-pildora {
+    border-radius: var(--mlt-sys-radius-pill);
+  }
+
+  &--forma-rectangular {
+    border-radius: var(--mlt-sys-radius-sm);
+  }
+
+  &--tamano-pequeno {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-space-md);
+    font-size: var(--mlt-sys-font-size-2);
+  }
+
+  &--tamano-compacto {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-space-md);
+    font-size: var(--mlt-sys-font-size-3);
+  }
+
+  &--tamano-mediano {
+    padding: var(--mlt-sys-padding-3) var(--mlt-sys-space-md);
+    font-size: var(--mlt-sys-font-size-4);
+  }
+
+  &--importancia-primaria {
+    background-color: var(--mlt-sys-color-text-strong);
+    border-color: var(--mlt-sys-color-text-strong);
+    color: var(--mlt-sys-color-page-background);
+  }
+
+  &--importancia-secundaria {
+    background-color: var(--mlt-sys-color-page-background);
+    border-color: var(--mlt-sys-color-border-subtle);
+    color: var(--mlt-sys-color-text-muted);
+  }
+
+  &--importancia-terciaria {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--mlt-sys-color-text-muted);
+  }
+
+  &--funcion-alternativa {
+    &.c-boton--importancia-primaria {
+      background-color: var(--mlt-sys-color-accent-orange);
+      border-color: var(--mlt-sys-color-accent-orange);
+      color: var(--mlt-sys-color-page-background);
+    }
+
+    &.c-boton--importancia-secundaria {
+      background-color: var(--mlt-sys-color-page-background);
+      border-color: var(--mlt-sys-color-accent-orange);
+      color: var(--mlt-sys-color-text-muted);
+    }
+
+    &.c-boton--importancia-terciaria {
+      color: var(--mlt-sys-color-accent-orange);
+    }
+  }
+
+  &--funcion-peligrosa {
+    &.c-boton--importancia-primaria {
+      background-color: var(--mlt-sys-color-red-5);
+      border-color: var(--mlt-sys-color-red-5);
+      color: var(--mlt-sys-color-page-background);
+    }
+
+    &.c-boton--importancia-secundaria {
+      background-color: var(--mlt-sys-color-page-background);
+      border-color: var(--mlt-sys-color-red-5);
+      color: var(--mlt-sys-color-red-5);
+    }
+
+    &.c-boton--importancia-terciaria {
+      color: var(--mlt-sys-color-red-5);
+    }
+  }
+
+  &--seleccionado {
+    background-color: var(--mlt-sys-color-text-strong);
+    border-color: var(--mlt-sys-color-text-strong);
+    color: var(--mlt-sys-color-page-background);
+  }
+
+  &--funcion-alternativa.c-boton--seleccionado {
+    background-color: var(--mlt-sys-color-provider-surface);
+    border-color: var(--mlt-sys-color-accent-orange);
+    color: var(--mlt-sys-color-text-strong);
+  }
+
+  &--funcion-peligrosa.c-boton--seleccionado {
+    background-color: var(--mlt-sys-color-red-5);
+    border-color: var(--mlt-sys-color-red-5);
+    color: var(--mlt-sys-color-page-background);
+  }
+}

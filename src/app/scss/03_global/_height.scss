@@ -1,0 +1,22 @@
+@use 'sass:list';
+@use '../01_utilities' as utilities;
+
+:root {
+  @for $i from 1 through list.length(utilities.$height-sizes) {
+    --mlt-sys-height-#{$i - 1}: #{list.nth(utilities.$height-sizes, $i)};
+  }
+}
+
+@for $i from 1 through list.length(utilities.$height-sizes) {
+  .g--height-#{$i - 1} {
+    height: var(--mlt-sys-height-#{$i - 1});
+  }
+
+  .g--min-height-#{$i - 1} {
+    min-height: var(--mlt-sys-height-#{$i - 1});
+  }
+
+  .g--max-height-#{$i - 1} {
+    max-height: var(--mlt-sys-height-#{$i - 1});
+  }
+}
